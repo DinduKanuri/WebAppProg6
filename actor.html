@@ -25,7 +25,12 @@
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">Correct: 0 Not Correct: 0</p>
+
+<div>
+    <img id="foodPic" src="icecream.jpg" width="150" height="150" onclick="updatePic()">
+</div>
+
 
 <script>
 
@@ -46,6 +51,25 @@ function checkActor() {
 
     document.getElementById("result").innerHTML =
         "Correct: " + correct + " Not Correct: " + notCorrect
+}
+
+let usePic = 1
+
+function updatePic() {
+    switch (usePic) {
+        case 1:
+            document.getElementById("foodPic").src = "kebab.jpg"
+            usePic = 2
+            break
+        case 2:
+            document.getElementById("foodPic").src = "noodles.jpg"
+            usePic = 3
+            break
+        case 3:
+            document.getElementById("foodPic").src = "icecream.jpg"
+            usePic = 1
+            break
+    }
 }
 
 </script>
