@@ -32,6 +32,19 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <input type="radio" id="product" name="operation" value="mul" onclick="chooseOp()">
+    <label for="product">product</label>
+
+    <input type="radio" id="sum" name="operation" value="add" onclick="chooseOp()">
+    <label for="sum">sum</label>
+
+    <input type="radio" id="divide" name="operation" value="div" onclick="chooseOp()">
+    <label for="divide">divide</label>
+</form>
+
+<p id="operationResult">Operation result will be displayed here</p>
+
 <script>
 
 function doDiscount() {
@@ -59,6 +72,23 @@ function doDiscount() {
 
     document.getElementById("result").innerHTML =
         "Costs are: " + costs
+}
+
+function chooseOp() {
+    let count = Number(document.getElementById("numberItems").value)
+    let discountAt = Number(document.getElementById("numberForDiscount").value)
+
+    let result = ""
+
+    if (document.getElementById("product").checked) {
+        result = count + " times " + discountAt + " is " + (count * discountAt)
+    } else if (document.getElementById("sum").checked) {
+        result = count + " plus " + discountAt + " is " + (count + discountAt)
+    } else if (document.getElementById("divide").checked) {
+        result = count + " divided by " + discountAt + " is " + (count / discountAt)
+    }
+
+    document.getElementById("operationResult").innerHTML = result
 }
 
 </script>
