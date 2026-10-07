@@ -25,6 +25,18 @@
     <input type="button" value="Meal Plan Choices" onclick="startMeal()">
 </form>
 
+<form>
+    <label for="cuisine">Enter cuisine type</label>
+    <input type="text" id="cuisine" value="Italian">
+    <br>
+
+    <label for="beverage">Enter beverage choice</label>
+    <input type="text" id="beverage" value="water">
+    <br>
+
+    <input type="button" value="Update the meal plan" onclick="updateMeal()">
+</form>
+
 <p id="result">This text will be replaced </p>
 
 <script>
@@ -42,6 +54,21 @@ function startMeal() {
         "Breakfast: " + my_meal_plan.breakfast +
         ", Lunch: " + my_meal_plan.lunch +
         ", Dinner: " + my_meal_plan.dinner
+}
+
+function updateMeal() {
+    let cuisine = document.getElementById("cuisine").value
+    let beverage = document.getElementById("beverage").value
+
+    my_meal_plan["cuisine"] = cuisine
+    my_meal_plan["beverage"] = beverage
+
+    document.getElementById("result").innerHTML =
+        "Breakfast: " + my_meal_plan.breakfast +
+        ", Lunch: " + my_meal_plan.lunch +
+        ", Dinner: " + my_meal_plan.dinner +
+        ", Cuisine: " + my_meal_plan.cuisine +
+        ", Beverage: " + my_meal_plan.beverage
 }
 
 </script>
