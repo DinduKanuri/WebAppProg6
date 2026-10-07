@@ -3,10 +3,11 @@
 
 <head>
     <title>Actor Guess</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
  
-<body>
+<body class="container mt-4">
 
 <h2>Actors by Dindu Kanuri</h2>
 
@@ -21,14 +22,15 @@
 
     <br>
 
-    <input type="button" value="Check the guess" onclick="checkActor()">
+    <input  class="btn btn-primary mt-2" type="button" value="Check the guess" onclick="checkActor()">
 </form>
 
 
 <p id="result">Correct: 0 Not Correct: 0</p>
 
 <div>
-    <img id="foodPic" src="icecream.jpg" width="150" height="150" onclick="updatePic()">
+    <img id="foodPic" src="icecream.jpg" width="150" height="150"
+     class="img-thumbnail mt-3" onclick="updatePic()">
 </div>
 
 
