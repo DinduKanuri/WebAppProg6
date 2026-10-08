@@ -22,11 +22,16 @@
 
     <br>
 
-    <input  class="btn btn-primary mt-2" type="button" value="Check the guess" onclick="checkActor()">
+    <input id="checkButton" class="btn btn-primary mt-2"
+       type="button" value="Check the guess"
+       onclick="checkActor()">
+
 </form>
 
 
-<p id="result">Correct: 0 Not Correct: 0</p>
+<div id="result" class="mt-2">
+    Correct: 0 Not Correct: 0
+</div>
 
 <div>
     <img id="foodPic" src="icecream.jpg" width="150" height="150"
@@ -51,8 +56,17 @@ function checkActor() {
         alert("Better luck next time")
     }
 
+    if (notCorrect > 10) {
+    document.getElementById("checkButton")
+        .setAttribute("onclick", "tooManyWrong()")
+}
+
     document.getElementById("result").innerHTML =
         "Correct: " + correct + " Not Correct: " + notCorrect
+}
+
+function tooManyWrong() {
+    alert("Sorry, too many wrong guesses.")
 }
 
 let usePic = 1
